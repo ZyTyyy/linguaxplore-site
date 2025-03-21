@@ -1,0 +1,181 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+body {
+    background-color: #59492E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body occupe toute la hauteur de la page */
+}
+
+/* ------------------ */
+/* 🔹 HEADER (NAVBAR) */
+/* ------------------ */
+header {
+    background-color: #3F331F;
+    padding: 15px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #FF9800;
+}
+
+/* Bouton "Acheter" */
+.cta-button .btn {
+    background-color: #FF9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+.cta-button .btn:hover {
+    background-color: #E07B00;
+}
+
+/* ----------------------------- */
+/* 🔹 SECTION CHOIX DE PLATEFORME */
+/* ----------------------------- */
+main {
+    flex-grow: 1; /* Permet au main de pousser le footer vers le bas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.platform-selection {
+    background-color: #C89D5D;
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+.platform img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Boutons sous les plateformes */
+.platform .btn {
+    background: linear-gradient(to bottom, #FF9800, #E07B00);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    width: 80%;
+}
+
+.platform .btn:hover {
+    opacity: 0.8;
+}
+
+/* ------------------ */
+/* 🔹 FOOTER          */
+/* ------------------ */
+footer {
+    background-color: #8C6547;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto; /* Permet de pousser le footer vers le bas */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.footer-section {
+    max-width: 400px;
+}
+
+.footer-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9800;
+}
+
+/* Texte du bas du footer */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
