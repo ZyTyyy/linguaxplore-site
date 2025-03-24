@@ -242,3 +242,12 @@ a {
     font-size: 0.9rem;
   }
   
+  .footer-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section:nth-child(2) h3 {
+    color: #FBD784;
+  }
+  
