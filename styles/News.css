@@ -1,9 +1,68 @@
-body {
-    background-color: #121212;
-    color: white;
+/* RESET DES LIENS */
+a {
+    color: inherit;
+    text-decoration: none;
   }
   
-  /* BANNIÈRE PRINCIPALE */
+  /* BACKGROUND GLOBAL */
+  body {
+    background-color: #121212;
+    color: white;
+    font-family: "Readex Pro", sans-serif;
+  }
+  
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  header .logo img {
+    height: 59px;
+    width: 113px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #FF9500;
+    border-bottom: 2px solid #FF9500;
+  }
+  
+  .cta .button {
+    background-color: #FF9500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+  
+  .cta .button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* BANNIÈRE */
   .news-banner {
     position: relative;
     text-align: center;
@@ -30,6 +89,7 @@ body {
   .banner-text h1 {
     font-size: clamp(1.5rem, 4vw, 2.2rem);
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .cta-button {
@@ -40,11 +100,12 @@ body {
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
   }
   
   .cta-button:hover {
     background-color: #ffa733;
+    transform: scale(1.05);
   }
   
   /* NEWS GRID */
@@ -57,7 +118,6 @@ body {
   }
   
   .news-card {
-    position: relative;
     width: 300px;
     height: 200px;
     overflow: hidden;
@@ -104,7 +164,7 @@ body {
     white-space: nowrap;
   }
   
-  /* BLOG GRID EN BAS */
+  /* BLOG GRID */
   .news-blog {
     display: flex;
     flex-wrap: wrap;
@@ -132,5 +192,53 @@ body {
   
   .blog-card p {
     font-size: 0.95rem;
+  }
+  
+  /* FOOTER */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d77d41;
+    padding: 20px;
+    color: white;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 6px 0;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding: 10px;
+    background-color: #d77d41;
+    color: white;
+    font-size: 0.9rem;
   }
   
