@@ -87,7 +87,7 @@ a {
   }
   
   .banner-text h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     margin: 0;
     text-align: center;
   }
@@ -96,23 +96,26 @@ a {
   .education-section {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 3rem;
+    gap: 60px;
+    padding: 4rem 2rem;
     background-color: #4a381f;
     flex-wrap: wrap;
   }
   
   .edu-card {
+    width: 550px; /* Agrandi */
     text-align: center;
-    width: 300px;
   }
   
   .edu-card h3 {
+    display: inline-block;
     background-color: #2c2c2c;
-    padding: 10px 0;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 0;
-  }
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }  
   
   .edu-card img {
     width: 100%;
@@ -124,25 +127,42 @@ a {
     transform: scale(1.05);
   }
   
+  
   /* EXPÉRIENCE IMAGE */
   .edu-experience {
+    position: relative;
     background-color: #4a381f;
     text-align: center;
     padding: 3rem 1rem;
   }
   
-  .edu-experience h2 {
-    background-color: #2c2c2c;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
-  
   .edu-experience img {
     width: 100%;
+    max-height: 500px;
+    max-width: 1350px;
+    object-fit: cover;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }  
+  
+  .edu-experience-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    z-index: 2;
   }
+  
+  .edu-experience-text h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: white;
+    margin: 0;
+  }  
+  
   
   /* FOOTER */
   footer {
@@ -184,7 +204,7 @@ a {
     text-decoration: underline;
   }
   
-  .footer-section:nth-child(2) h3 {
+  .footer-section h3 {
     color: #FBD784;
   }
   
