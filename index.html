@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-
-<link rel="icon" type="image/gif" href="assets\axolotl 1.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
-=======
->>>>>>> 293a742 (Amélioration de l'UI)
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>LinguaXplore</title>
-=======
     <title>LinguaXplore - Apprenez les langues en explorant le monde</title>
     <link rel="icon" type="image/png" href="assets/axolotl 1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
->>>>>>> 293a742 (Amélioration de l'UI)
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -79,49 +67,75 @@
         <div class="container">
             <h2>Prenez votre envol ! <span class="emoji">✈️</span></h2>
             <p class="section-subtitle">Explorez ces destinations fascinantes et maîtrisez leur langue locale</p>
-            <div class="destination-buttons">
-                <div class="destination-button">
-                    <img src="assets/Londre.png" alt="Londres">
-                    <div class="destination-info">
-                        <h3>Londres</h3>
-                        <p>Perfectionnez votre anglais britannique</p>
+            
+            <div class="destination-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/Londre.png" alt="Londres">
+                                <div class="destination-overlay">
+                                    <h3>Londres</h3>
+                                    <p>Perfectionnez votre anglais britannique</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/RIO.png" alt="Rio de Janeiro">
+                                <div class="destination-overlay">
+                                    <h3>Rio de Janeiro</h3>
+                                    <p>Découvrez le portugais brésilien</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/Paris.png" alt="Paris">
+                                <div class="destination-overlay">
+                                    <h3>Paris</h3>
+                                    <p>Maîtrisez le français parisien</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/Tokyo.png" alt="Tokyo">
+                                <div class="destination-overlay">
+                                    <h3>Tokyo</h3>
+                                    <p>Initiez-vous au japonais</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/marrakech.webp" alt="Marrakech">
+                                <div class="destination-overlay">
+                                    <h3>Marrakech</h3>
+                                    <p>Découvrez l'arabe marocain</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="destination-card">
+                                <img src="assets/mexico.webp" alt="Mexico">
+                                <div class="destination-overlay">
+                                    <h3>Mexico</h3>
+                                    <p>Découvrez l'espagnol</p>
+                                    <span class="learn-more">En savoir plus →</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="destination-button">
-                    <img src="assets/RIO.png" alt="Rio de Janeiro">
-                    <div class="destination-info">
-                        <h3>Rio de Janeiro</h3>
-                        <p>Découvrez le portugais brésilien</p>
-                    </div>
-                </div>
-                <div class="destination-button">
-                    <img src="assets/Paris.png" alt="Paris">
-                    <div class="destination-info">
-                        <h3>Paris</h3>
-                        <p>Maîtrisez le français parisien</p>
-                    </div>
-                </div>
-                <div class="destination-button">
-                    <img src="assets/Tokyo.png" alt="Tokyo">
-                    <div class="destination-info">
-                        <h3>Tokyo</h3>
-                        <p>Initiez-vous au japonais</p>
-                    </div>
-                </div>
-                <div class="destination-button">
-                    <img src="assets/Marrakech.png" alt="Marrakech">
-                    <div class="destination-info">
-                        <h3>Marrakech</h3>
-                        <p>Découvrez l'arabe marocain</p>
-                    </div>
-                </div>
-                <div class="destination-button">
-                    <img src="assets/mexico.png" alt="Mexico">
-                    <div class="destination-info">
-                        <h3>Mexico</h3>
-                        <p>Découvrez l'espagnol</p>
-                    </div>
-                </div>
+                <button class="carousel-nav prev" aria-label="Previous slide">‹</button>
+                <button class="carousel-nav next" aria-label="Next slide">›</button>
+                <div class="carousel-dots"></div>
             </div>
         </div>
     </section>
@@ -130,28 +144,46 @@
         <div class="container">
             <h2>Nos actualités</h2>
             <p class="section-subtitle">Restez informé des dernières nouveautés de LinguaXplore</p>
-            <div class="news-buttons">
-                <div class="news-button">
-                    <img src="assets/Group 1000004197.png" alt="Amsterdam">
-                    <div class="news-info">
+            
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam">
+                        <div class="news-tag">Nouveauté</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-05-15">15 Mai 2025</time>
                         <h3>Amsterdam bientôt disponible</h3>
-                        <p>Préparez-vous à explorer les canaux et à apprendre le néerlandais</p>
+                        <p>Préparez-vous à explorer les canaux et à apprendre le néerlandais dans notre prochaine mise à jour majeure.</p>
+                        <a href="#" class="read-more">Lire l'article <span>→</span></a>
                     </div>
-                </div>
-                <div class="news-button">
-                    <img src="assets/Group 1000004198.png" alt="Lieux historiques">
-                    <div class="news-info">
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/musee-couverture.webp" alt="Lieux historiques">
+                        <div class="news-tag">Mise à jour</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-04-28">28 Avril 2025</time>
                         <h3>Nouveaux lieux historiques</h3>
-                        <p>Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale</p>
+                        <p>Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale avec notre extension culturelle.</p>
+                        <a href="#" class="read-more">Lire l'article <span>→</span></a>
                     </div>
-                </div>
-                <div class="news-button">
-                    <img src="assets/Group 1000004196.png" alt="Lyon">
-                    <div class="news-info">
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/istockphoto-1496872145-612x612.jpg" alt="Lyon">
+                        <div class="news-tag">Annonce</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-03-10">10 Mars 2025</time>
                         <h3>Lyon prévu pour 2028</h3>
-                        <p>La capitale gastronomique française rejoindra bientôt nos destinations</p>
+                        <p>La capitale gastronomique française rejoindra bientôt nos destinations avec des quêtes culinaires uniques.</p>
+                        <a href="#" class="read-more">Lire l'article <span>→</span></a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>

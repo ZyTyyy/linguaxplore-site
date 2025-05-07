@@ -263,7 +263,7 @@ nav ul li a:hover::after {
 .description-content {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 80px;
 }
 
 .description-image {
@@ -319,7 +319,7 @@ nav ul li a:hover::after {
     font-size: 1.2rem;
 }
 
-/* Destinations Section */
+/* Destination Carousel */
 .section-subtitle {
     text-align: center;
     margin-bottom: 40px;
@@ -338,129 +338,237 @@ nav ul li a:hover::after {
     vertical-align: middle;
 }
 
-.destination-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    animation: fadeInButtons 1.5s forwards;
-}
-
-.destination-button {
+.destination-carousel {
     position: relative;
-    width: 230px;
+    margin: 0 auto;
+    max-width: 1200px;
     overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+
+.carousel-slide {
+    min-width: calc(33.333% - 20px);
+    flex: 0 0 auto;
+    transition: all 0.3s ease;
+}
+
+.destination-card {
+    position: relative;
     border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all var(--transition-speed) ease;
-    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    transition: all 0.3s ease;
 }
 
-.destination-button img {
+.destination-card img {
     width: 100%;
-    height: 313px;
+    height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-speed) ease;
+    transition: transform 0.5s ease;
 }
 
-.destination-info {
+.destination-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 30px 20px 20px;
+    color: white;
     transform: translateY(100%);
-    transition: transform var(--transition-speed) ease;
+    transition: transform 0.3s ease;
 }
 
-.destination-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.destination-button:hover img {
-    transform: scale(1.05);
-}
-
-.destination-button:hover .destination-info {
+.destination-card:hover .destination-overlay {
     transform: translateY(0);
 }
 
-.destination-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.destination-info p {
-    font-size: 0.9rem;
-    color: #ddd;
-    margin-bottom: 0;
-}
-
-/* News Section */
-.news {
-    background-color: var(--secondary-color);
-}
-
-.news-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    animation: fadeInButtons 1.5s forwards;
-}
-
-.news-button {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all var(--transition-speed) ease;
-    cursor: pointer;
-}
-
-.news-button img {
-    width: 100%;
-    height: auto;
-    transition: transform var(--transition-speed) ease;
-}
-
-.news-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    opacity: 0;
-    transition: opacity var(--transition-speed) ease;
-}
-
-.news-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.news-button:hover img {
+.destination-card:hover img {
     transform: scale(1.05);
 }
 
-.news-button:hover .news-info {
-    opacity: 1;
-}
-
-.news-info h3 {
+.destination-overlay h3 {
     font-size: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.news-info p {
+.destination-overlay p {
     font-size: 1rem;
-    color: #ddd;
-    margin-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover .learn-more {
+    transform: translateX(5px);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* News Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-card {
+    background: #1a1a1a;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.news-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.news-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content time {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.news-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: #ccc;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.read-more span {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .read-more {
+    transform: translateX(5px);
+}
+
+.news-card:hover .read-more span {
+    transform: translateX(3px);
 }
 
 /* Newsletter Section */
@@ -601,16 +709,8 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-    .destination-buttons {
-        gap: 15px;
-    }
-    
-    .destination-button {
-        width: 200px;
-    }
-    
-    .destination-button img {
-        height: 270px;
+    .carousel-slide {
+        min-width: calc(50% - 20px);
     }
 }
 
@@ -621,10 +721,6 @@ footer {
     
     .description-image, .description-text {
         width: 100%;
-    }
-    
-    .news-button {
-        max-width: 100%;
     }
     
     .hero-title {
@@ -659,12 +755,8 @@ footer {
         gap: 20px;
     }
     
-    .destination-buttons {
-        gap: 15px;
-    }
-    
-    .destination-button {
-        width: calc(50% - 15px);
+    .carousel-slide {
+        min-width: 100%;
     }
     
     .hero-title {
@@ -696,10 +788,6 @@ footer {
     
     .logo img {
         height: 50px;
-    }
-    
-    .destination-button {
-        width: 100%;
     }
     
     .hero-title {
