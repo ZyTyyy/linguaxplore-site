@@ -2,93 +2,58 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actualités - LinguaXplore</title>
-  <link rel="icon" type="image/gif" href="../assets/axolotl 1.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../styles/news.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos actualités - LinguaXplore</title>
+  <link rel="stylesheet" href="../styles/News.css" />
 </head>
 <body>
+  <main>
+    <h2 class="title">Nos actualités</h2>
+    <p class="subtitle">Les dernières nouvelles de LinguaXplore</p>
 
-  <header>
-    <div class="logo">
-      <img src="../assets/lxp.png" alt="LinguaXplore Logo" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Découvrir</a></li>
-        <li><a href="#" class="active">Actualités</a></li>
-        <li><a href="#">Éducation</a></li>
-      </ul>
-    </nav>
-    <div class="cta">
-      <a href="#" class="button">Acheter</a>
-    </div>
-  </header>
+    <div class="carousel">
+      <div class="carousel-control-button left"><input type="radio" name="carousel-control-input" /></div>
+      <div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked /></div>
 
-  <section class="news-banner">
-    <img src="../assets/News.png" alt="Bannière actualités" />
-    <div class="banner-text">
-      <h1>Week-end insolite :<br>7 escapades dépaysantes à découvrir dans le jeu</h1>
-      <button class="cta-button">Jouer dès maintenant</button>
+      <div class="carousel-rotation-direction">
+        <ul class="carousel-item-wrapper" style="--_num-elements: 5">
+          <li class="carousel-item" style="--_index: 1">
+            <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam" data-title="Amsterdam bientôt disponible" data-date="15 Mai 2025" data-desc="Préparez-vous à explorer les canaux et à apprendre le néerlandais dans notre prochaine mise à jour majeure." />
+              <div class="carousel-caption">Amsterdam bientôt disponible</div>
+          </li>
+          <li class="carousel-item" style="--_index: 2">
+            <img src="../assets/musee-couverture.webp" alt="Histoire" data-title="Nouveaux lieux historiques" data-date="28 Avril 2025" data-desc="Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale avec notre extension culturelle." />
+              <div class="carousel-caption">Nouveaux lieux historiques</div>
+          </li>
+          <li class="carousel-item" style="--_index: 3">
+            <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon" data-title="Lyon prévu pour 2028" data-date="10 Mars 2025" data-desc="La capitale gastronomique française rejoindra bientôt nos destinations avec des quêtes culinaires uniques." />
+              <div class="carousel-caption">Lyon prévu pour 2028</div>
+          </li>
+          <li class="carousel-item" style="--_index: 4">
+            <img src="../assets/plage.jpg" alt="Plages" data-title="Les plus belles plages secrètes" data-date="2 Juin 2025" data-desc="Découvrez les plages cachées de LinguaXplore où pratiquer vos langues dans un cadre paradisiaque." />
+              <div class="carousel-caption">Les plus belles plages secrètes</div>
+          </li>
+          <li class="carousel-item" style="--_index: 5">
+            <img src="../assets/education.jpg" alt="Éducation" data-title="Du voyage à l'éducation" data-date="1 Juin 2025" data-desc="Comment les aventures dans LinguaXplore deviennent des expériences éducatives immersives." />
+              <div class="carousel-caption">Du voyage à l'éducation</div>
+          </li>
+          <li class="carousel-ground"></li>
+        </ul>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <section class="news-grid">
-    <div class="news-card">
-      <img src="../assets/Blog.png" alt="Road trip" />
+  <!-- Modale -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <img id="modal-img" src="" alt="Actu" />
+      <h3 id="modal-title"></h3>
+      <time id="modal-date"></time>
+      <p id="modal-desc"></p>
     </div>
-    <div class="news-card">
-      <img src="../assets/Blog 2.png" alt="Plages secrètes" />
-    </div>
-    <div class="news-card">
-      <img src="../assets/Blog 3.png" alt="Vacances" />
-    </div>
-  </section>
+  </div>
 
-  <section class="highlight">
-    <img src="../assets/Lyon.png" alt="Lyon" />
-    <div class="highlight-text">Lyon prévu pour 2028</div>
-  </section>
-
-  <section class="news-blog">
-    <div class="blog-card">
-      <img src="../assets/Blog 4.png" alt="" />
-      <p>08.08.2021<br>Du voyage à l’éducation</p>
-    </div>
-    <div class="blog-card">
-      <img src="../assets/Blog 5.png" alt="" />
-      <p>08.08.2021<br>L’avenir du tourisme éducatif en VR</p>
-    </div>
-    <div class="blog-card">
-      <img src="../assets/Blog 6.png" alt="" />
-      <p>08.08.2021<br>Défis linguistiques et aventures touristiques</p>
-    </div>
-    <div class="blog-card">
-      <img src="../assets/Blog 7.png" alt="" />
-      <p>08.08.2021<br>Les maps cachées du jeu</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-section">
-      <h3>LinguaXplore</h3>
-      <p>Sortez et découvrez votre prochaine piste, montagne & destination !</p>
-    </div>
-    <div class="footer-section">
-      <h3>Plus sur LinguaXplore</h3>
-      <ul>
-        <li><a href="#">Découvrir</a></li>
-        <li><a href="#">Éducation</a></li>
-        <li><a href="#">Entreprise</a></li>
-        <li><a href="#">Acheter</a></li>
-        <li><a href="#">Confidentialité</a></li>
-        <li><a href="#">Conditions générales de vente</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <p class="copyright">Copyright 2024 LinguaXplore, Inc. Tous droits réservés.</p>
+  <script src="../scripts/News.js"></script>
 </body>
 </html>
