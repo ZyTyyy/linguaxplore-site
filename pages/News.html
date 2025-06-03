@@ -4,13 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nos actualités - LinguaXplore</title>
-  <link rel="stylesheet" href="../styles/News.css" />
+  <link rel="icon" type="image/png" href="../assets/axolotl 1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/News.css"/>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <main>
-    <h2 class="title">Nos actualités</h2>
-    <p class="subtitle">Les dernières nouvelles de LinguaXplore</p>
 
+  <!-- HEADER NAVBAR -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="../assets/newlogo.png" alt="LinguaXplore Logo">
+      </div>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#about">Notre entreprise</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a href="#" class="button">Acheter</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TITRE -->
+  <section class="news-header">
+    <h1>Actualités du moment</h1>
+  </section>
+
+  <!-- CAROUSEL -->
+  <main>
     <div class="carousel">
       <div class="carousel-control-button left"><input type="radio" name="carousel-control-input" /></div>
       <div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked /></div>
@@ -19,23 +52,23 @@
         <ul class="carousel-item-wrapper" style="--_num-elements: 5">
           <li class="carousel-item" style="--_index: 1">
             <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam" data-title="Amsterdam bientôt disponible" data-date="15 Mai 2025" data-desc="Préparez-vous à explorer les canaux et à apprendre le néerlandais dans notre prochaine mise à jour majeure." />
-              <div class="carousel-caption">Amsterdam bientôt disponible</div>
+            <div class="carousel-caption">Amsterdam bientôt disponible</div>
           </li>
           <li class="carousel-item" style="--_index: 2">
             <img src="../assets/musee-couverture.webp" alt="Histoire" data-title="Nouveaux lieux historiques" data-date="28 Avril 2025" data-desc="Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale avec notre extension culturelle." />
-              <div class="carousel-caption">Nouveaux lieux historiques</div>
+            <div class="carousel-caption">Nouveaux lieux historiques</div>
           </li>
           <li class="carousel-item" style="--_index: 3">
             <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon" data-title="Lyon prévu pour 2028" data-date="10 Mars 2025" data-desc="La capitale gastronomique française rejoindra bientôt nos destinations avec des quêtes culinaires uniques." />
-              <div class="carousel-caption">Lyon prévu pour 2028</div>
+            <div class="carousel-caption">Lyon prévu pour 2028</div>
           </li>
           <li class="carousel-item" style="--_index: 4">
             <img src="../assets/plage.jpg" alt="Plages" data-title="Les plus belles plages secrètes" data-date="2 Juin 2025" data-desc="Découvrez les plages cachées de LinguaXplore où pratiquer vos langues dans un cadre paradisiaque." />
-              <div class="carousel-caption">Les plus belles plages secrètes</div>
+            <div class="carousel-caption">Les plus belles plages secrètes</div>
           </li>
           <li class="carousel-item" style="--_index: 5">
             <img src="../assets/education.jpg" alt="Éducation" data-title="Du voyage à l'éducation" data-date="1 Juin 2025" data-desc="Comment les aventures dans LinguaXplore deviennent des expériences éducatives immersives." />
-              <div class="carousel-caption">Du voyage à l'éducation</div>
+            <div class="carousel-caption">Du voyage à l'éducation</div>
           </li>
           <li class="carousel-ground"></li>
         </ul>
@@ -43,7 +76,55 @@
     </div>
   </main>
 
-  <!-- Modale -->
+  <!-- ACTUALITÉS LISTÉES EN DESSOUS -->
+  <section class="news-list">
+    <div class="news-block">
+      <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam">
+      <div class="news-text">
+        <h3>Amsterdam bientôt disponible</h3>
+        <time>15 Mai 2025</time>
+        <p>Préparez-vous à explorer les canaux et à apprendre le néerlandais dans notre prochaine mise à jour majeure.</p>
+      </div>
+    </div>
+
+    <div class="news-block reverse">
+      <img src="../assets/musee-couverture.webp" alt="Lieux historiques">
+      <div class="news-text">
+        <h3>Nouveaux lieux historiques</h3>
+        <time>28 Avril 2025</time>
+        <p>Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale avec notre extension culturelle.</p>
+      </div>
+    </div>
+
+    <div class="news-block">
+      <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon">
+      <div class="news-text">
+        <h3>Lyon prévu pour 2028</h3>
+        <time>10 Mars 2025</time>
+        <p>La capitale gastronomique française rejoindra bientôt nos destinations avec des quêtes culinaires uniques.</p>
+      </div>
+    </div>
+
+    <div class="news-block reverse">
+      <img src="../assets/plage.jpg" alt="Plages secrètes">
+      <div class="news-text">
+        <h3>Les plus belles plages secrètes</h3>
+        <time>2 Juin 2025</time>
+        <p>Découvrez les plages cachées de LinguaXplore où pratiquer vos langues dans un cadre paradisiaque.</p>
+      </div>
+    </div>
+
+    <div class="news-block">
+      <img src="../assets/education.jpg" alt="Éducation immersive">
+      <div class="news-text">
+        <h3>Du voyage à l'éducation</h3>
+        <time>1 Juin 2025</time>
+        <p>Comment les aventures dans LinguaXplore deviennent des expériences éducatives immersives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALE DÉTAIL -->
   <div id="modal" class="modal hidden">
     <div class="modal-content">
       <span id="modal-close">&times;</span>
