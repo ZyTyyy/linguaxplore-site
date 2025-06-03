@@ -3,8 +3,8 @@
   --carousel-transition-ease: ease-out;
   --carousel-bg-color-rgb: 0, 0, 0;
   --carousel-shadow-color-rgb: 128, 128, 128;
-  --carousel-item-width: 11.5rem;
-  --carousel-item-height: 17.5rem;
+  --carousel-item-width: 20rem;
+  --carousel-item-height: 30.5rem;
   --carousel-item-hover-effect: 1.075;
   --carousel-item-reflection-blur: 0.25rem;
   --carousel-item-empty-color-rgb: 255, 255, 255;
@@ -22,17 +22,16 @@
 }
 
 body {
-  background-color: rgb(var(--carousel-bg-color-rgb));
+  background-color: #222 !important;
   margin: 0;
   font-family: "Readex Pro", sans-serif;
-  color: white;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  padding: 4rem 2rem 2rem;
 }
 
 .carousel {
@@ -45,42 +44,11 @@ main {
   width: var(--_diameter);
   height: var(--_diameter);
   position: relative;
+  margin-bottom: 4rem;
 }
 
 .carousel .carousel-control-button {
-  --_width: var(--carousel-control-button-width);
-  --_height: var(--carousel-control-button-height);
-  z-index: 1;
-  width: var(--_width);
-  height: var(--_height);
-  background-color: rgb(var(--carousel-control-color-rgb));
-  opacity: 0.2;
-  transition: opacity var(--carousel-transition-duration) var(--carousel-transition-ease);
-  position: absolute;
-}
-
-.carousel .carousel-control-button:hover {
-  opacity: 0.4;
-}
-
-.carousel .carousel-control-button input {
-  appearance: none;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.carousel .carousel-control-button.left {
-  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-  top: calc(var(--_radius) - var(--_height) / 2);
-  left: 0;
-}
-
-.carousel .carousel-control-button.right {
-  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-  top: calc(var(--_radius) - var(--_height) / 2);
-  right: 0;
+  display: none !important;
 }
 
 .carousel .carousel-rotation-direction {
@@ -132,7 +100,6 @@ main {
   transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
   box-shadow: 0 0 var(--carousel-item-glow-size) transparent;
   text-align: center;
-  font-family: sans-serif;
   color: white;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -143,6 +110,7 @@ main {
   transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
   border-radius: 1rem;
   transition: border-radius 0.3s ease;
+  background-color: #141414;
 }
 
 .carousel .carousel-item img {
@@ -152,26 +120,87 @@ main {
   border-radius: 0.5rem;
 }
 
-.carousel .carousel-item p {
-  margin-top: 0.5rem;
+.carousel .carousel-caption {
+  background: #141414;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
   font-size: 0.9rem;
+  margin-top: 0.2rem;
 }
 
-.carousel .carousel-ground {
-  --_width: var(--_diameter);
-  --_height: var(--_diameter);
-  left: calc(var(--_radius) - var(--_width) / 2);
-  top: calc(var(--_radius) - var(--_height) / 2);
-  transform: rotateX(90deg) translateZ(calc(var(--_item-height) / -2));
-  width: var(--_width);
-  height: var(--_height);
-  border-radius: 50%;
-  background: radial-gradient(rgba(var(--carousel-shadow-color-rgb), 0.75) 15%, rgba(var(--carousel-bg-color-rgb), 0) 60%);
-  opacity: 0.5;
-  position: absolute;
+.news-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20rem;
+  padding-bottom: 2rem;
 }
 
-/* Popup */
+.news-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.news-list {
+  margin-top: -10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.news-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  color: white;
+  flex-wrap: nowrap; /* pour empêcher le passage à la ligne */
+}
+
+.news-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.news-block img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.news-text {
+  width: 50%;
+  padding: 0 1rem;
+}
+
+.news-text h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.news-text time {
+  display: block;
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.news-text p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
 .modal {
   display: flex;
   align-items: center;
@@ -201,6 +230,7 @@ main {
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   color: #fff;
+  animation: fadeInZoom 0.4s ease-out;
 }
 
 .modal-content img {
@@ -240,10 +270,6 @@ main {
   color: #fff;
 }
 
-.carousel-control-button {
-  display: none !important;
-}
-
 @keyframes fadeInZoom {
   0% {
     opacity: 0;
@@ -253,77 +279,4 @@ main {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.modal-content {
-  animation: fadeInZoom 0.4s ease-out;
-}
-
-.news-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem 0;
-}
-
-.news-header h1 {
-  font-family: "Readex Pro", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  margin: 0;
-}
-
-.news-list {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding: 2rem;
-}
-
-.news-block {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: white;
-  flex-wrap: wrap;
-}
-
-.news-block.reverse {
-  flex-direction: row-reverse;
-}
-
-.news-block img {
-  width: 40%;
-  max-width: 400px;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-.news-text {
-  flex: 1;
-  min-width: 250px;
-}
-
-.news-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: white;
-}
-
-.news-text time {
-  display: block;
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-bottom: 0.75rem;
-}
-
-.news-text p {
-  font-size: 1rem;
-  color: #ddd;
-  line-height: 1.6;
 }
