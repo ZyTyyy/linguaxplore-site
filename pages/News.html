@@ -12,17 +12,14 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-  <!-- HEADER NAVBAR -->
+  <!-- Header -->
   <header>
     <div class="container header-container">
       <div class="logo">
         <img src="../assets/newlogo.png" alt="LinguaXplore Logo">
       </div>
       <div class="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
       <nav>
         <ul>
@@ -37,37 +34,37 @@
     </div>
   </header>
 
-  <!-- TITRE -->
+  <!-- Titre -->
   <section class="news-header">
     <h1>Actualités du moment</h1>
   </section>
 
-  <!-- CAROUSEL -->
+  <!-- Carousel -->
   <main>
-    <div class="carousel">
+    <div class="carousel" id="carousel">
       <div class="carousel-control-button left"><input type="radio" name="carousel-control-input" /></div>
       <div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked /></div>
 
       <div class="carousel-rotation-direction">
         <ul class="carousel-item-wrapper" style="--_num-elements: 5">
-          <li class="carousel-item" style="--_index: 1">
-            <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam" data-title="Amsterdam bientôt disponible" data-date="15 Mai 2025" data-desc="Préparez-vous à explorer les canaux et à apprendre le néerlandais dans notre prochaine mise à jour majeure." />
+          <li class="carousel-item" style="--_index: 1" data-target="#actu1">
+            <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam" />
             <div class="carousel-caption">Amsterdam bientôt disponible</div>
           </li>
-          <li class="carousel-item" style="--_index: 2">
-            <img src="../assets/musee-couverture.webp" alt="Histoire" data-title="Nouveaux lieux historiques" data-date="28 Avril 2025" data-desc="Visitez des monuments emblématiques et découvrez leur histoire dans la langue locale avec notre extension culturelle." />
+          <li class="carousel-item" style="--_index: 2" data-target="#actu2">
+            <img src="../assets/musee-couverture.webp" alt="Histoire" />
             <div class="carousel-caption">Nouveaux lieux historiques</div>
           </li>
-          <li class="carousel-item" style="--_index: 3">
-            <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon" data-title="Lyon prévu pour 2028" data-date="10 Mars 2025" data-desc="La capitale gastronomique française rejoindra bientôt nos destinations avec des quêtes culinaires uniques." />
+          <li class="carousel-item" style="--_index: 3" data-target="#actu3">
+            <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon" />
             <div class="carousel-caption">Lyon prévu pour 2028</div>
           </li>
-          <li class="carousel-item" style="--_index: 4">
-            <img src="../assets/plage.jpg" alt="Plages" data-title="Les plus belles plages secrètes" data-date="2 Juin 2025" data-desc="Découvrez les plages cachées de LinguaXplore où pratiquer vos langues dans un cadre paradisiaque." />
+          <li class="carousel-item" style="--_index: 4" data-target="#actu4">
+            <img src="../assets/plage.jpg" alt="Plages" />
             <div class="carousel-caption">Les plus belles plages secrètes</div>
           </li>
-          <li class="carousel-item" style="--_index: 5">
-            <img src="../assets/education.jpg" alt="Éducation" data-title="Du voyage à l'éducation" data-date="1 Juin 2025" data-desc="Comment les aventures dans LinguaXplore deviennent des expériences éducatives immersives." />
+          <li class="carousel-item" style="--_index: 5" data-target="#actu5">
+            <img src="../assets/education.jpg" alt="Éducation" />
             <div class="carousel-caption">Du voyage à l'éducation</div>
           </li>
           <li class="carousel-ground"></li>
@@ -76,9 +73,9 @@
     </div>
   </main>
 
-  <!-- ACTUALITÉS LISTÉES EN DESSOUS -->
-  <section class="news-list">
-    <div class="news-block">
+  <!-- Actualités -->
+  <section class="news-list" id="actualites">
+    <div class="news-block" id="actu1">
       <img src="../assets/amsterdam-spring-ut5edfytvnemna3n.jpg" alt="Amsterdam">
       <div class="news-text">
         <h3>Amsterdam bientôt disponible</h3>
@@ -87,7 +84,7 @@
       </div>
     </div>
 
-    <div class="news-block reverse">
+    <div class="news-block reverse" id="actu2">
       <img src="../assets/musee-couverture.webp" alt="Lieux historiques">
       <div class="news-text">
         <h3>Nouveaux lieux historiques</h3>
@@ -96,7 +93,7 @@
       </div>
     </div>
 
-    <div class="news-block">
+    <div class="news-block" id="actu3">
       <img src="../assets/istockphoto-1496872145-612x612.jpg" alt="Lyon">
       <div class="news-text">
         <h3>Lyon prévu pour 2028</h3>
@@ -105,7 +102,7 @@
       </div>
     </div>
 
-    <div class="news-block reverse">
+    <div class="news-block reverse" id="actu4">
       <img src="../assets/plage.jpg" alt="Plages secrètes">
       <div class="news-text">
         <h3>Les plus belles plages secrètes</h3>
@@ -114,7 +111,7 @@
       </div>
     </div>
 
-    <div class="news-block">
+    <div class="news-block" id="actu5">
       <img src="../assets/education.jpg" alt="Éducation immersive">
       <div class="news-text">
         <h3>Du voyage à l'éducation</h3>
@@ -124,17 +121,77 @@
     </div>
   </section>
 
-  <!-- MODALE DÉTAIL -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span id="modal-close">&times;</span>
-      <img id="modal-img" src="" alt="Actu" />
-      <h3 id="modal-title"></h3>
-      <time id="modal-date"></time>
-      <p id="modal-desc"></p>
+  <!-- Restez informé -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Restez informé</h2>
+      <p>Abonnez-vous pour recevoir les dernières actualités et mises à jour de LinguaXplore.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Votre adresse email" required>
+        <button type="submit">S'abonner</button>
+      </form>
     </div>
-  </div>
+  </section>
 
-  <script src="../scripts/News.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>LinguaXplore</h3>
+          <p>Sortez et découvrez votre prochaine aventure linguistique avec nous !</p>
+          <div class="social-icons">
+            <a href="#"><span class="social-icon facebook"></span></a>
+            <a href="#"><span class="social-icon twitter"></span></a>
+            <a href="#"><span class="social-icon instagram"></span></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Plus sur LinguaXplore</h3>
+          <ul>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#">Éducation</a></li>
+            <li><a href="#about">Notre entreprise</a></li>
+            <li><a href="#">Témoignages</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Assistance technique</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Informations légales</h3>
+          <ul>
+            <li><a href="#">Acheter</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <p>Copyright © 2025 LinguaXplore, Inc. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script de scroll -->
+  <script>
+    document.querySelectorAll(".carousel-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const targetId = item.getAttribute("data-target");
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
