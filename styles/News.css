@@ -1,0 +1,282 @@
+:root {
+  --carousel-transition-duration: 250ms;
+  --carousel-transition-ease: ease-out;
+  --carousel-bg-color-rgb: 0, 0, 0;
+  --carousel-shadow-color-rgb: 128, 128, 128;
+  --carousel-item-width: 20rem;
+  --carousel-item-height: 30.5rem;
+  --carousel-item-hover-effect: 1.075;
+  --carousel-item-reflection-blur: 0.25rem;
+  --carousel-item-empty-color-rgb: 255, 255, 255;
+  --carousel-item-glow-color-rgb: 255, 255, 255;
+  --carousel-item-glow-size: 5rem;
+  --carousel-diameter: 50rem;
+  --carousel-3d-perspective: 1000px;
+  --carousel-3d-perspective-origin: 50% 20%;
+  --carousel-control-button-width: 1.25rem;
+  --carousel-control-button-height: 4rem;
+  --carousel-control-color-rgb: 255, 255, 255;
+  --carousel-animation-duration: 25s;
+  --carousel-animation-play-state: running;
+  --carousel-direction-animation-play-state: paused;
+}
+
+body {
+  background-color: #222 !important;
+  margin: 0;
+  font-family: "Readex Pro", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.carousel {
+  --_diameter: var(--carousel-diameter);
+  --_radius: calc(var(--_diameter) / 2);
+  --_item-width: var(--carousel-item-width);
+  --_item-height: var(--carousel-item-height);
+  perspective: var(--carousel-3d-perspective);
+  perspective-origin: var(--carousel-3d-perspective-origin);
+  width: var(--_diameter);
+  height: var(--_diameter);
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.carousel .carousel-control-button {
+  display: none !important;
+}
+
+.carousel .carousel-rotation-direction {
+  --_direction-animation-play-state: var(--carousel-direction-animation-play-state);
+  --_z: calc(var(--_radius) * -1);
+  transform: translateZ(var(--_z));
+  transform-style: preserve-3d;
+  animation: carousel-rotation-reverse calc(var(--carousel-animation-duration) / 2) reverse linear infinite var(--_direction-animation-play-state);
+}
+
+@keyframes carousel-rotation-reverse {
+  from {
+    transform: translateZ(var(--_z)) rotateY(0deg);
+  }
+  to {
+    transform: translateZ(var(--_z)) rotateY(360deg);
+  }
+}
+
+.carousel .carousel-item-wrapper {
+  transform-style: inherit;
+  width: inherit;
+  height: inherit;
+  list-style-type: none;
+  position: relative;
+  animation: carousel-rotation-normal var(--carousel-animation-duration) normal linear infinite var(--carousel-animation-play-state);
+}
+
+@keyframes carousel-rotation-normal {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.carousel .carousel-item {
+  --_width: var(--_item-width);
+  --_height: var(--_item-height);
+  --_rotation: calc(360 / var(--_num-elements) * var(--_index) * 1deg);
+  left: calc(var(--_radius) - var(--_item-width) / 2);
+  top: calc(var(--_radius) - var(--_item-height) / 2);
+  transform: rotateY(var(--_rotation)) translateZ(var(--_radius));
+  transform-style: inherit;
+  width: var(--_width);
+  height: var(--_height);
+  position: absolute;
+  transition: all var(--carousel-transition-duration) var(--carousel-transition-ease);
+  box-shadow: 0 0 var(--carousel-item-glow-size) transparent;
+  text-align: center;
+  color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.carousel .carousel-item:hover {
+  box-shadow: 0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb));
+  transform: rotateY(var(--_rotation)) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)));
+  border-radius: 1rem;
+  transition: border-radius 0.3s ease;
+  background-color: #141414;
+}
+
+.carousel .carousel-item img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.carousel .carousel-caption {
+  background: #141414;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.news-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20rem;
+  padding-bottom: 2rem;
+}
+
+.news-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.news-list {
+  margin-top: -10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.news-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  color: white;
+  flex-wrap: nowrap; /* pour empêcher le passage à la ligne */
+}
+
+.news-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.news-block img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.news-text {
+  width: 50%;
+  padding: 0 1rem;
+}
+
+.news-text h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.news-text time {
+  display: block;
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.news-text p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  animation: fadeInZoom 0.4s ease-out;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-content h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.modal-content time {
+  display: block;
+  margin: 0.5rem 0;
+  color: #ccc;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #eee;
+}
+
+#modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.3s;
+}
+
+#modal-close:hover {
+  color: #fff;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
