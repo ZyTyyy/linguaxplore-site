@@ -31,7 +31,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem 2rem;
+  padding: 1rem 2rem 2rem;
 }
 
 .carousel {
@@ -44,7 +44,8 @@ main {
   width: var(--_diameter);
   height: var(--_diameter);
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  margin-top: -2rem;
 }
 
 .carousel .carousel-control-button {
@@ -127,7 +128,6 @@ main {
   padding: 0.3rem 0.6rem;
   border-radius: 0.5rem;
   font-size: 0.9rem;
-  margin-top: 0.2rem;
 }
 
 .news-header {
@@ -135,70 +135,281 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 20rem;
+  padding-top: 6rem;
   padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+}
+
+.news-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/pattern.png');
+  opacity: 0.05;
+  animation: slideBackground 30s linear infinite;
+  z-index: 1;
+}
+
+.news-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .news-header h1 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin: 0;
   color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 1s ease-out;
+  margin-bottom: 1rem;
+}
+
+.news-header-subtitle {
+  font-size: 1.4rem;
+  color: #ddd;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.news-header-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FF9500;
+  text-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #bbb;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .news-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .news-header-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .news-header-stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
 }
 
 .news-list {
-  margin-top: -10rem;
+  margin-top: -8rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
   padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .news-block {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem 2rem;
+  gap: 3rem;
+  padding: 4rem;
   color: white;
-  flex-wrap: nowrap; /* pour empêcher le passage à la ligne */
+  flex-wrap: nowrap;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.news-block.reverse {
-  flex-direction: row-reverse;
+.news-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .news-block img {
-  width: 50%;
-  height: auto;
+  width: 45%;
+  height: 400px;
   object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.news-block:hover img {
+  transform: scale(1.02);
 }
 
 .news-text {
   width: 50%;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .news-text h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
   color: white;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.news-text h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #fff, transparent);
 }
 
 .news-text time {
   display: block;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #aaa;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
 .news-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #ddd;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletter {
+  background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  padding: 4rem 0;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/pattern.png');
+  opacity: 0.1;
+  animation: slideBackground 20s linear infinite;
+}
+
+.newsletter .container {
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.newsletter p {
+  color: #ddd;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: #FF9500;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: #FF9500;
+}
+
+@keyframes slideBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
 }
 
 .modal {

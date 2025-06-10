@@ -24,51 +24,64 @@
   /* ------------------ */
   /* HEADER / NAVBAR */
   /* ------------------ */
+  header {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+  }
+  
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
-  .logo img {
-    height: 50px;
+  .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
   }
   
-  .navbar nav ul {
-    display: flex;
+  .nav-links {
     list-style: none;
+    display: flex;
     gap: 30px;
   }
   
-  .navbar nav ul li a {
+  .nav-links li a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition);
   }
   
-  .navbar nav ul li a:hover {
+  .nav-links li a:hover {
     color: var(--primary-color);
   }
   
-  .buy-button {
+  .cta-button .btn {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-color);
     padding: 10px 20px;
     border-radius: var(--border-radius);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: background var(--transition);
   }
   
-  .buy-button:hover {
-    background-color: #e07f00;
+  .cta-button .btn:hover {
+    background-color: #e78600;
+  }
+  
+  .logo img {
+    height: 50px;
+    width: auto;
   }
   
   /* ------------------ */
