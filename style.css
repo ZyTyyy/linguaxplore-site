@@ -827,3 +827,62 @@ nav.active {
 .hamburger-menu.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
+/* Bannière de cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(34, 34, 34, 0.98);
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    z-index: 2000;
+    min-width: 320px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    animation: fadeIn 0.7s;
+}
+.cookie-banner-content {
+    width: 100%;
+    align-items: center;
+    gap: 18px;
+}
+.cookie-banner-content p {
+    margin: 0 0 8px 0;
+    font-size: 1.08rem;
+    line-height: 1.5;
+}
+.cookie-banner-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+.cookie-banner .button,
+.cookie-banner .button-secondary {
+    min-width: 120px;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: none;
+}
+@media (max-width: 600px) {
+    .cookie-banner-content {
+        gap: 12px;
+    }
+    .cookie-banner-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cookie-banner .button,
+    .cookie-banner .button-secondary {
+        width: 100%;
+        min-width: unset;
+    }
+}

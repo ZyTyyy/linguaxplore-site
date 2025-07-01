@@ -110,6 +110,41 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Gestion de la bannière de cookies
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    const declineCookiesBtn = document.getElementById('decline-cookies');
+
+    // Vérifie si l'utilisateur a déjà fait un choix
+    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+        cookieBanner.style.display = 'flex';
+    }
+
+    function setCookieConsent(value) {
+        localStorage.setItem('cookieConsent', value);
+        cookieBanner.style.display = 'none';
+    }
+
+    if (acceptCookiesBtn) {
+        acceptCookiesBtn.addEventListener('click', function() {
+            setCookieConsent('accepted');
+        });
+    }
+    if (declineCookiesBtn) {
+        declineCookiesBtn.addEventListener('click', function() {
+            setCookieConsent('declined');
+        });
+    }
+
+    // Bouton de test pour réinitialiser les cookies
+    const resetCookiesBtn = document.getElementById('reset-cookies');
+    if (resetCookiesBtn) {
+        resetCookiesBtn.addEventListener('click', function() {
+            localStorage.removeItem('cookieConsent');
+            if (cookieBanner) cookieBanner.style.display = 'flex';
+        });
+    }
 });
 
 // Carousel initialization
